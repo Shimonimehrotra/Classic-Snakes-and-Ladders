@@ -25,17 +25,17 @@ class SnakeNLadder
 	static Map<Integer,Integer> ladder = new HashMap<Integer,Integer>();
 	
 	{
-		snake.put(99,54);
-		snake.put(70,55);
-		snake.put(52,42);
-		snake.put(25,2);
+		snake.put(99,52);
+		snake.put(87,55);
+		snake.put(62,42);
+		snake.put(28,4);
 		snake.put(95,72);
 		
-		ladder.put(6,25);
-		ladder.put(11,40);
+		ladder.put(9,25);
+		ladder.put(13,40);
 		ladder.put(60,85);
-		ladder.put(46,90);
-		ladder.put(17,69);
+		ladder.put(45,94);
+		ladder.put(16,67);
 	}
 	
 	
@@ -57,8 +57,8 @@ class SnakeNLadder
 		int diceValue =0;
 		do
 		{
-			System.out.println(currentPlayer==-1?"\n\nFIRST PLAYER TURN":"\n\nSECOND PLAYER TURN");
-			System.out.println("Press r to roll Dice");
+			System.out.println(currentPlayer==-1?"\n\nFIRST PLAYER'S MOVE":"\n\nSECOND PLAYER'S MOVE");
+			System.out.println("PRESS r TO ROLL THE DICE");
 			str = s.next();
 			diceValue = rollDice();
 			
@@ -71,7 +71,7 @@ class SnakeNLadder
 				System.out.println("------------------");
 				if(isWin(player1))
 				{
-					System.out.println("First player wins");
+					System.out.println("!!!FIRST PLAYER WINS!!!");
 					return;
 				}
 			}
@@ -83,7 +83,7 @@ class SnakeNLadder
 				System.out.println("------------------");
 				if(isWin(player2))
 				{
-					System.out.println("Second player wins");
+					System.out.println("!!!SECOND PLAYER WINS!!!");
 					return;
 				}
 			}
@@ -108,13 +108,13 @@ class SnakeNLadder
 		
 		if(null!=snake.get(player))
 		{
-			System.out.println("swallowed by snake");
+			System.out.println("SWALLOWED BY SNAKE");
 			player= snake.get(player);
 		}
 		
 		if(null!=ladder.get(player))
 		{
-			System.out.println("climb up the ladder");
+			System.out.println("CLIMB UP THE LADDER");
 			player= ladder.get(player);
 		}
 		return player;
